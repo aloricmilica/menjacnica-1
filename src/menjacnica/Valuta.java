@@ -9,12 +9,16 @@ public class Valuta {
 		return nazivValute;
 	}
 	public void setNazivValute(String nazivValute) {
+		if(nazivValute == null || nazivValute.isEmpty() )
+			throw new RuntimeException("Morate uneti naziv valute");
 		this.nazivValute = nazivValute;
 	}
 	public String getSkraceniNazivValute() {
 		return skraceniNazivValute;
 	}
 	public void setSkraceniNazivValute(String skraceniNazivValute) {
+		if(skraceniNazivValute == null || skraceniNazivValute.isEmpty() )
+			throw new RuntimeException("Morate uneti skraceni naziv valute");
 		this.skraceniNazivValute = skraceniNazivValute;
 	}
 	

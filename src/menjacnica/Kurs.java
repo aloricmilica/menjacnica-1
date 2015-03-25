@@ -15,6 +15,8 @@ public class Kurs {
 	}
 	
 	public void setProdajni(double prodajni) {
+		if(prodajni <= 0 )
+			throw new RuntimeException("Prodajni kurs mora biti veci od 0");
 		this.prodajni = prodajni;
 	}
 	
@@ -23,6 +25,8 @@ public class Kurs {
 	}
 	
 	public void setKupovni(double kupovni) {
+		if(kupovni <= 0 )
+			throw new RuntimeException("Kupovni kurs mora biti veci od 0");
 		this.kupovni = kupovni;
 	}
 	
@@ -31,7 +35,9 @@ public class Kurs {
 	}
 	
 	public void setSrednji(double srednji) {
+		if(srednji > 0 && srednji >= kupovni && srednji <= prodajni)
 		this.srednji = srednji;
+		else throw new RuntimeException("Srednji kurs mora biti veci od 0 i izmedju kupovnog i podajnog");
 	}
 	
 	public Valuta getValuta() {
@@ -39,6 +45,8 @@ public class Kurs {
 	}
 	
 	public void setValuta(Valuta valuta) {
+		if(valuta == null) 
+			throw new RuntimeException("Morate uneti valutu");
 		this.valuta = valuta;
 	}
 	
